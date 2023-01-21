@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2017",
+    "sourceMap": false,
+    "baseUrl": "./src",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@brainly/*": ["./brainly/*"],
+      "@brainly": ["./brainly/index"]
+    }
+  },
+  "include": ["src/**/*.ts"]
+}

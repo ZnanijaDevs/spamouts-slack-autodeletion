@@ -1,0 +1,1 @@
+export { client as slackClient } from "./client";

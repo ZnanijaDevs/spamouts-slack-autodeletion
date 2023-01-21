@@ -1,0 +1,31 @@
+service: spamouts-slack-autodeletion
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  environment: ${file(./env.${opt:stage, 'dev'}.json)}
+  memorySize: 128
+  timeout: 35
+  
+
+functions:
+  cleanAntispamers:
+    handler: src/index.cleanAntispamersChannel
+    events:
+      - schedule:
+          rate: cron(0/2 6-23 ? * * *)
+          timezone: Europe/Moscow
+  cleanModerators:
+    handler: src/index.cleanModeratorsChannel
+    events:
+      - schedule:
+          rate: cron(0/10 9-23 ? * * *)
+          timezone: Europe/Moscow
+
+plugins:
+  - serverless-esbuild
+  - serverless-local-schedule
+custom:
+  esbuild:
+    plugins: esbuild-plugins.js

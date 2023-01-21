@@ -1,0 +1,7 @@
+__old
+node_modules
+.esbuild
+.serverless
+package-lock.json
+local.cmd
+env.*.json
