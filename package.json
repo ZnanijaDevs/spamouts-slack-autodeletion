@@ -1,6 +1,6 @@
 {
   "name": "spamouts-slack-autodeletion",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "vlaex <vlaex7@gmail.com>",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.109",
