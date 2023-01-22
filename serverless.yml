@@ -7,7 +7,18 @@ provider:
   environment: ${file(./env.${opt:stage, 'dev'}.json)}
   memorySize: 128
   timeout: 35
-  
+  httpApi:
+    cors:
+      allowedOrigins:
+        - https://znanija.com
+        - https://brainly.com
+        - https://brainly-ru.brainly.tech
+      allowedHeaders:
+        - Content-Type
+        - X-Client
+      allowedMethods:
+        - POST
+        - GET
 
 functions:
   # Use UTC in schedule
@@ -24,6 +35,8 @@ functions:
 
 plugins:
   - serverless-esbuild
+  - serverless-offline
+
 custom:
   esbuild:
     plugins: esbuild-plugins.js
