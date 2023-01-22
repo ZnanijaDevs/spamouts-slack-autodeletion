@@ -14,15 +14,16 @@ $ serverless invoke local -f "functionName"
 
 - Install npm dependencies, Serverless and set AWS credentials
 - Set environment variables in `env.dev.json` and `env.prod.json`
-```json
+```jsonc
 {
   "ANTISPAMERS_CHANNEL_ID": "C02DE6LKQLR",
   "MODERATORS_CHANNEL_ID": "C03KLBS5S94",
   "BRAINLY_AUTH_TOKEN": "<token>",
-  "SLACK_BOT_TOKEN": "xoxb-..."
+  "SLACK_BOT_TOKEN": "xoxb-...", // use this token to delete messages posted by the bot
+  "SLACK_USER_TOKEN": "xoxp-..." // use this token to add reactions to messages
 }
 ```
-- Use `serverless invoke local` to invoke functions in the local environment
+- Use `serverless invoke local` and `serverless offline start` to invoke functions in the local environment
 
 ### Deploy
 _You will need an AWS account to run this app in production_

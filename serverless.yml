@@ -6,32 +6,29 @@ provider:
   runtime: nodejs16.x
   environment: ${file(./env.${opt:stage, 'dev'}.json)}
   memorySize: 128
-  timeout: 35
   httpApi:
-    cors:
-      allowedOrigins:
-        - https://znanija.com
-        - https://brainly.com
-        - https://brainly-ru.brainly.tech
-      allowedHeaders:
-        - Content-Type
-        - X-Client
-      allowedMethods:
-        - POST
-        - GET
+    cors: true
 
 functions:
   # Use UTC in schedule
   cleanAntispamers:
     handler: src/index.cleanAntispamersChannel
+    timeout: 25
     events:
       - schedule:
           rate: cron(0/2 3-20,21,22,23 ? * MON-SUN *)
   cleanModerators:
     handler: src/index.cleanModeratorsChannel
+    timeout: 25
     events:
       - schedule:
           rate: cron(0/5 3-20,21,22 ? * MON-SUN *)
+  deleteMessageByUserId:
+    handler: src/index.deleteMessageByUserId
+    events:
+      - httpApi:
+          method: POST
+          path: /deleteMessageByUserId
 
 plugins:
   - serverless-esbuild

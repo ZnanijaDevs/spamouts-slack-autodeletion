@@ -3,5 +3,5 @@ node_modules
 .esbuild
 .serverless
 package-lock.json
-local.cmd
+*.cmd
 env.*.json
