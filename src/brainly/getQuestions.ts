@@ -61,6 +61,8 @@ const buildGetQuestionsQuery = (ids: number[]): string => {
 }
 
 export async function getQuestions(ids: number[]) {
+  if (!ids.length) return [];
+
   const questionsData = await gql<Record<string, GQLQuestion>>(buildGetQuestionsQuery(ids));
 
   const questions: Question[] = Object.entries(questionsData).map(([key, question]) => {
