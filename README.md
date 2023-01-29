@@ -1,8 +1,9 @@
 ## spamouts-slack-autodeletion
 
-This is a serverless cron-based app for [our workspace](https://spamouts.slack.com) that
+This is a serverless app for [our workspace](https://spamouts.slack.com) that
 - deletes messages in #antispamers
 - deletes messages in #moderators
+- deletes messages in #to-delete
 
 ### How to run
 ```bash
