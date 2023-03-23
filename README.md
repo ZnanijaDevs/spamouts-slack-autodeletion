@@ -19,6 +19,7 @@ $ serverless invoke local -f "functionName"
 {
   "ANTISPAMERS_CHANNEL_ID": "C02DE6LKQLR",
   "MODERATORS_CHANNEL_ID": "C03KLBS5S94",
+  "TODELETE_CHANNEL_ID": "C2P3PR98V",
   "BRAINLY_AUTH_TOKEN": "<token>",
   "SLACK_BOT_TOKEN": "xoxb-...", // use this token to delete messages posted by the bot
   "SLACK_USER_TOKEN": "xoxp-..." // use this token to add reactions to messages,
