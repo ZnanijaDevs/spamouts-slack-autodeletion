@@ -21,7 +21,8 @@ $ serverless invoke local -f "functionName"
   "MODERATORS_CHANNEL_ID": "C03KLBS5S94",
   "BRAINLY_AUTH_TOKEN": "<token>",
   "SLACK_BOT_TOKEN": "xoxb-...", // use this token to delete messages posted by the bot
-  "SLACK_USER_TOKEN": "xoxp-..." // use this token to add reactions to messages
+  "SLACK_USER_TOKEN": "xoxp-..." // use this token to add reactions to messages,
+  "REDIS_DB_URL": "redis://user:pass@redis.cloud.com:6379/0"
 }
 ```
 - Use `serverless invoke local` and `serverless offline start` to invoke functions in the local environment
