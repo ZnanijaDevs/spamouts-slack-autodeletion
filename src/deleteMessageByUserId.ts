@@ -14,8 +14,8 @@ const response = (statusCode: number, body?: string | object) => {
 }
 
 export async function deleteMessageByUserId(event: APIGatewayEvent) {
-  let body = JSON.parse(event.body);
-  let userId: number = body?.userId;
+  let body = event.body ? JSON.parse(event.body) : event;
+  let userId: number = body.userId;
 
   if (typeof userId !== "number" || userId < MIN_USER_ID || userId > MAX_USER_ID) {
     return response(422, "Invalid user ID");
