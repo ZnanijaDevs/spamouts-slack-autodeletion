@@ -10,6 +10,12 @@ const REACTION_NAME = "magic_wand";
 export async function deleteMessageByUserId(req: Request<{}, {}, { userId: number }>, res: Response) {
   let userId = req.body?.userId;
 
+	if (typeof req.body === "string") {
+		try {
+			userId = JSON.parse(req.body)?.userId
+		} catch {}
+	}
+
   if (typeof userId !== "number" || userId < MIN_USER_ID || userId > MAX_USER_ID) {
     return res.status(HttpStatusCode.UNPROCESSABLE_ENTITY).send("invalid user id");
   }

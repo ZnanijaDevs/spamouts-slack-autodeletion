@@ -9,6 +9,7 @@ import { deleteMessageByUserId } from "./deleteMessageByUserId";
 const app = express();
 
 app.use(cors());
+app.use(express.text());
 app.use(express.json());
 
 app.post("/deleteMessageByUserId", deleteMessageByUserId.bind(deleteMessageByUserId));
