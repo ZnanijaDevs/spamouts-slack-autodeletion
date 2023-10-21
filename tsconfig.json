@@ -5,15 +5,11 @@
     "target": "ES2017",
     "sourceMap": false,
     "baseUrl": "./src",
+    "outDir": "build",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
-    "noImplicitAny": true,
-    "resolveJsonModule": true,
-    "paths": {
-      "@brainly/*": ["./brainly/*"],
-      "@brainly": ["./brainly/index"]
-    }
+    "resolveJsonModule": true
   },
   "include": ["src/**/*.ts"]
 }
