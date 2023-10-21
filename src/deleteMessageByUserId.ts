@@ -35,7 +35,7 @@ export async function deleteMessageByUserId(event: APIGatewayEvent) {
   			channel: process.env.TODELETE_CHANNEL_ID
   		});
   	} catch (err) {
-  		console.error(`Failed to add a reaction to message ${messageTimestamp}. Error: ${err}`)
+  		console.error(`Failed to add a reaction to message ${messageTimestamp}`, err)
   	}
   }
 
