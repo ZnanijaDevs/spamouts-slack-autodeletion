@@ -27,7 +27,6 @@ export async function deleteMessageByUserId(req: Request<{}, {}, { userId: numbe
 
   	try {
   		await slackClient.reactions.add({
-				token: process.env.SLACK_USER_TOKEN,
   			timestamp: messageTimestamp,
   			name: REACTION_NAME,
   			channel: process.env.TODELETE_CHANNEL_ID

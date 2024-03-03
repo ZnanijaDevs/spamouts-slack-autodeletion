@@ -8,7 +8,6 @@ Create an .env file, then run `npm run dev`
 # .env
 PORT=3001
 REDIS_DB_URL=redis://user:pass@host.com:port/0
-SLACK_USER_TOKEN=xoxp-xxxxxxxxxx
 SLACK_BOT_TOKEN=xoxb-xxxxxxxxxxxxxx
 TODELETE_CHANNEL_ID=CXXXXXX
 ```
